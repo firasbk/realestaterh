@@ -1,0 +1,27 @@
+<div class="banner"><p class="banner-text" >Real Estate List</p></div>
+
+<div class="container-flex small-container">
+    <div class="row">
+        <div *ngFor="let estate of estates" class="col-3">
+            <div class="card-group custom-card">
+                <div class="card">
+                  <img class="card-img-top img" src="estate.images[0].src" style="background-color: gainsboro;" alt="Card image cap">
+                  <div class="card-body">
+                    <h5 class="card-title">ID: {{estate.external_id}}</h5>
+                     
+                    <div class="card-text">
+                        <p class="card-text">Type: {{estate.type}}</p>
+                        <p class="card-text">Building </p>
+                        <p class="card-text">City Settlement: {{estate.settlement}}</p>
+                        <p class="card-text">Referent: {{estate.user_name}}</p>
+                        <p class="card-text">Target price: {{estate.price}}</p>
+                        <p class="card-text">Size: {{estate.size}} </p>
+                    </div>
+                    <p class="card-text "><button class="btn btn-primary custom-btn" [routerLink]="['/property/datasheet/',estate.external_id]">View</button>
+                    </p>
+                  </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
